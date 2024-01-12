@@ -1,4 +1,6 @@
 export type userType = {
-  photoURL: string | null | undefined;
-  displayName: string | null | undefined;
+  picture: string | null | undefined;
+  name: string | null | undefined;
+  user_id: string;
+  email: string | null;
 };
