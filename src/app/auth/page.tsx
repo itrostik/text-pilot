@@ -10,12 +10,12 @@ import { useRouter } from "next/navigation";
 import { loginAnonymous, loginGithub, loginGoogle } from "../../../utils/auth";
 
 import Loading from "@/components/Loading";
+import { useUser } from "../../../hooks/useUser";
 
 export default function Page() {
-  const [user, setUser] = useState<userType | null>(null);
+  const { user, setUser } = useUser();
   const [loading, setLoading] = useState<boolean>(false);
   const router = useRouter();
-
   async function login(typeAuth: "google" | "github" | "anonymous") {
     setLoading(true);
     let user;
