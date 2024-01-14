@@ -57,8 +57,8 @@ export default function Home() {
               <Image src={"/logo.svg"} width={40} height={40} alt={"logo"} />
             </div>
             <div className={"flex gap-2 items-center justify-end"}>
-              <span>{user.name}</span>
-              {user.picture && (
+              <span>{user.name ? user.name : "Гость"}</span>
+              {user.picture ? (
                 <Image
                   src={user.picture}
                   alt=""
@@ -66,6 +66,8 @@ export default function Home() {
                   height={30}
                   className={"rounded-full"}
                 />
+              ) : (
+                <Image src={"/anonymous.svg"} alt={""} width={30} height={30} />
               )}
               <div
                 onClick={() => logout()}
